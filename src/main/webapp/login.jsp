@@ -42,8 +42,8 @@
 			$.ajax({
 				url : "settings/user/login.do",
 				data : {
-					"LoginUsername":username,
-					"LoginPwd":pwd
+					"loginAct":username,
+					"loginPwd":pwd
 				},
 				type : "post",
 				dataType : "json",

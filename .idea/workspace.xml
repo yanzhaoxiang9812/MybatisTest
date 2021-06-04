@@ -10,18 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6c80a7c-392c-4e98-b878-6432ac1e8a7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/utils/TransactionInvocationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/utils/TransactionInvocationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/web/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,6 +71,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/utils" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -83,7 +79,8 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.37214887" />
   </component>
@@ -221,7 +218,7 @@
       <updated>1622788081911</updated>
       <workItem from="1622788082998" duration="5000" />
       <workItem from="1622788620210" duration="8295000" />
-      <workItem from="1622798963261" duration="9581000" />
+      <workItem from="1622798963261" duration="12149000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1622797883125</created>
@@ -230,7 +227,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622797883125</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="day1">
+      <created>1622808882004</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622808882004</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,16 +243,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="day1" />
     <option name="LAST_COMMIT_MESSAGE" value="day1" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/web/controller/UserController.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

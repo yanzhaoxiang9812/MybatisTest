@@ -13,11 +13,10 @@ import java.util.Map;
 public class UserServiceImpl implements UserService {
     private UserDao userDao = SqlSessionUtil.getSqlSession().getMapper(UserDao.class);
 
-    public User Login(String username, String pwd, String ip) throws LoginExeption {
-        System.out.println("jdioqwhj9ioebquobcq9uwheqw34134124124");
+    public User Login(String loginAct, String loginPwd, String ip) throws LoginExeption {
         Map<String,String> map = new HashMap<String, String>();
-        map.put("username",username);
-        map.put("pwd",pwd);
+        map.put("loginAct", loginAct);
+        map.put("loginPwd", loginPwd);
 
         //判断账号密码
         User user = userDao.Login(map);
@@ -27,11 +26,14 @@ public class UserServiceImpl implements UserService {
         }
 
         //验证账号失效时间
+        /*
         String exprieTime = user.getCreateTime();
         String currentTime = DateTimeUtil.getSysTime();
         if (exprieTime.compareTo(currentTime) < 0){
             //账号失效
         }
+
+         */
 
         //判断是否锁定
         String lokState = user.getLockState();
@@ -40,10 +42,13 @@ public class UserServiceImpl implements UserService {
         }
 
         //判断ip地址
+        /*
         String allowIps = user.getAllowIps();
         if (!allowIps.contains(ip)){
             throw new LoginExeption("ip地址受限");
         }
+
+         */
 
 
         return user;
