@@ -26,14 +26,14 @@ public class UserServiceImpl implements UserService {
         }
 
         //验证账号失效时间
-        /*
-        String exprieTime = user.getCreateTime();
+        String exprieTime = user.getExpireTime();
         String currentTime = DateTimeUtil.getSysTime();
         if (exprieTime.compareTo(currentTime) < 0){
             //账号失效
+            throw new LoginExeption("账号已失效");
         }
 
-         */
+
 
         //判断是否锁定
         String lokState = user.getLockState();
@@ -42,13 +42,12 @@ public class UserServiceImpl implements UserService {
         }
 
         //判断ip地址
-        /*
         String allowIps = user.getAllowIps();
         if (!allowIps.contains(ip)){
             throw new LoginExeption("ip地址受限");
         }
 
-         */
+
 
 
         return user;
