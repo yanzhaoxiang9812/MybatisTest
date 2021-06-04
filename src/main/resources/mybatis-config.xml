@@ -6,7 +6,7 @@
 	
   <properties resource="jdbc.properties"/>
   <typeAliases>
-    <package name="yzxCrmTest.crm/.ettings.domian"/>
+    <package name="yzxCrmTest.crm.settings.domian"/>
   </typeAliases>
   <environments default="development">
     <environment id="development">
