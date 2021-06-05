@@ -10,24 +10,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6c80a7c-392c-4e98-b878-6432ac1e8a7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/filter/EncodingFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/filter/LoginFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/crm_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/crm_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/Activity.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/domain/Activity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/domain/ActivityRemark.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/ActivityService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/Impl/ActivityServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ActivityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/crm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/UserDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/web/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/web/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/dept/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/dept/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/dictionary/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/dictionary/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/settings/qx/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/settings/qx/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/activity/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/activity/detail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/activity/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/activity/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/contacts/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/contacts/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/main/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/main/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,10 +40,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Jsp File" />
+        <option value="FxmlFile" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -71,7 +74,6 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
@@ -82,7 +84,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -96,13 +98,14 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\workbench\dao" />
       <recent name="E:\CRM\crm\src\main\webapp\WEB-INF\lib" />
       <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\utils" />
       <recent name="E:\CRM\crm\src\main\webapp\image" />
       <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\settings\dao" />
-      <recent name="E:\CRM\crm\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\settings\dao" />
       <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm" />
     </key>
   </component>
@@ -230,7 +233,9 @@
       <workItem from="1622788082998" duration="5000" />
       <workItem from="1622788620210" duration="8295000" />
       <workItem from="1622798963261" duration="14984000" />
-      <workItem from="1622814336442" duration="3661000" />
+      <workItem from="1622814336442" duration="4043000" />
+      <workItem from="1622818454986" duration="101000" />
+      <workItem from="1622879793564" duration="10886000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1622797883125</created>
@@ -253,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622811732087</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="day1">
+      <created>1622818311182</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1622818311182</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

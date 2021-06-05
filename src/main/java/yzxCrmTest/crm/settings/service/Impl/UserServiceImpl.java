@@ -8,6 +8,7 @@ import yzxCrmTest.crm.utils.DateTimeUtil;
 import yzxCrmTest.crm.utils.SqlSessionUtil;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserServiceImpl implements UserService {
@@ -34,7 +35,6 @@ public class UserServiceImpl implements UserService {
         }
 
 
-
         //判断是否锁定
         String lokState = user.getLockState();
         if ("0".equals(lokState)){
@@ -47,9 +47,12 @@ public class UserServiceImpl implements UserService {
             throw new LoginExeption("ip地址受限");
         }
 
-
-
-
         return user;
+    }
+
+    @Override
+    public List<User> getUserList() {
+        List<User> userList = userDao.getUserList();
+        return userList;
     }
 }

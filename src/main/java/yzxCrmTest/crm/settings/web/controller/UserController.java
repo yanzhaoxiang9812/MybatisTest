@@ -1,4 +1,4 @@
-package yzxCrmTest.crm.web.controller;
+package yzxCrmTest.crm.settings.web.controller;
 
 import yzxCrmTest.crm.settings.domian.User;
 import yzxCrmTest.crm.settings.service.Impl.UserServiceImpl;

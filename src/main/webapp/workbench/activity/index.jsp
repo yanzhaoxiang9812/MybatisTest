@@ -1,22 +1,78 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
+	<base href="<%=basePath%>">
 <meta charset="UTF-8">
 
-<link href="../../jquery/bootstrap_3.3.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-<link href="../../jquery/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" />
+<link href="jquery/bootstrap_3.3.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+<link href="jquery/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet" />
 
-<script type="text/javascript" src="../../jquery/jquery-1.11.1-min.js"></script>
-<script type="text/javascript" src="../../jquery/bootstrap_3.3.0/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../jquery/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
-<script type="text/javascript" src="../../jquery/bootstrap-datetimepicker-master/locale/bootstrap-datetimepicker.zh-CN.js"></script>
-
+<script type="text/javascript" src="jquery/jquery-1.11.1-min.js"></script>
+<script type="text/javascript" src="jquery/bootstrap_3.3.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="jquery/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js"></script>
+<script type="text/javascript" src="jquery/bootstrap-datetimepicker-master/locale/bootstrap-datetimepicker.zh-CN.js"></script>
 <script type="text/javascript">
-
 	$(function(){
-		
-		
-		
+		$(".time").datetimepicker({
+			minView: "month",
+			language:  'zh-CN',
+			format: 'yyyy-mm-dd',
+			autoclose: true,
+			todayBtn: true,
+			pickerPosition: "bottom-left"
+		});
+
+		//给添加按钮绑定事件
+		$("#openAddWindow").click(function () {
+			$.ajax({
+				url : "/workbench/activity/getUserList.do",
+				type : "get",
+				dataType : "json",
+				success : function(data){
+					var html = "<option></option>";
+					$.each(data,function (i,n) {
+						html += "<option value='"+n.id+"'>"+n.name+"</option>";
+					})
+					$("#create-marketActivityOwner").html(html);
+					var id = "${user.id}";
+					$("#create-marketActivityOwner").val(id);
+					$("#createActivityModal").modal("show");
+				}
+			})
+		})
+
+		//给保存按钮绑定事件
+		$("#saveAddActivity").click(function () {
+			$.ajax({
+				url : "/workbench/activity/saveActivity.do",
+				data: {
+					"owner" : $.trim($("#create-marketActivityOwner").val()),
+					"name" : $.trim($("#create-marketActivityName").val()),
+					"startDate" : $.trim($("#create-startTime").val()),
+					"endDate" : $.trim($("#create-endTime").val()),
+					"cost" : $.trim($("#create-cost").val()),
+					"description" : $.trim($("#create-describe").val())
+				},
+				type : "post",
+				dataType : "json",
+				success : function(data){
+					if (data.success){
+						//成功并刷新列表
+						$("#createActivityModal").modal("hide");
+						//关闭模态窗口
+					}else {
+						//失败
+						alert("添加失败");
+					}
+
+				}
+			})
+		})
 	});
 	
 </script>
@@ -41,9 +97,7 @@
 							<label for="create-marketActivityOwner" class="col-sm-2 control-label">所有者<span style="font-size: 15px; color: red;">*</span></label>
 							<div class="col-sm-10" style="width: 300px;">
 								<select class="form-control" id="create-marketActivityOwner">
-								  <option>zhangsan</option>
-								  <option>lisi</option>
-								  <option>wangwu</option>
+
 								</select>
 							</div>
                             <label for="create-marketActivityName" class="col-sm-2 control-label">名称<span style="font-size: 15px; color: red;">*</span></label>
@@ -55,11 +109,11 @@
 						<div class="form-group">
 							<label for="create-startTime" class="col-sm-2 control-label">开始日期</label>
 							<div class="col-sm-10" style="width: 300px;">
-								<input type="text" class="form-control" id="create-startTime">
+								<input type="text" class="form-control time" id="create-startTime" readonly>
 							</div>
 							<label for="create-endTime" class="col-sm-2 control-label">结束日期</label>
 							<div class="col-sm-10" style="width: 300px;">
-								<input type="text" class="form-control" id="create-endTime">
+								<input type="text" class="form-control time" id="create-endTime" readonly>
 							</div>
 						</div>
                         <div class="form-group">
@@ -81,7 +135,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-					<button type="button" class="btn btn-primary" data-dismiss="modal">保存</button>
+					<button type="button" class="btn btn-primary" id="saveAddActivity">保存</button>
 				</div>
 			</div>
 		</div>
@@ -200,13 +254,17 @@
 				  
 				</form>
 			</div>
+
+
 			<div class="btn-toolbar" role="toolbar" style="background-color: #F7F7F7; height: 50px; position: relative;top: 5px;">
 				<div class="btn-group" style="position: relative; top: 18%;">
-				  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createActivityModal"><span class="glyphicon glyphicon-plus"></span> 创建</button>
-				  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#editActivityModal"><span class="glyphicon glyphicon-pencil"></span> 修改</button>
+				  <button type="button" class="btn btn-primary" id="openAddWindow"><span class="glyphicon glyphicon-plus"></span> 创建</button>
+				  <button type="button" class="btn btn-default" id="openUpdateWindow"><span class="glyphicon glyphicon-pencil"></span> 修改</button>
 				  <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span> 删除</button>
 				</div>
-				
+
+
+
 			</div>
 			<div style="position: relative;top: 10px;">
 				<table class="table table-hover">
@@ -222,14 +280,14 @@
 					<tbody>
 						<tr class="active">
 							<td><input type="checkbox" /></td>
-							<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='detail.html';">发传单</a></td>
+							<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='workbench/activity/detail.jsp';">发传单</a></td>
                             <td>zhangsan</td>
 							<td>2020-10-10</td>
 							<td>2020-10-20</td>
 						</tr>
                         <tr class="active">
                             <td><input type="checkbox" /></td>
-                            <td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='detail.html';">发传单</a></td>
+                            <td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='workbench/activity/detail.jsp';">发传单</a></td>
                             <td>zhangsan</td>
                             <td>2020-10-10</td>
                             <td>2020-10-20</td>
