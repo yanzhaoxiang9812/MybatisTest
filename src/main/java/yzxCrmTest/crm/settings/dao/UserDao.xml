@@ -4,10 +4,10 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="yzxCrmTest.crm.settings.dao.UserDao">
-    <select id="Login" resultType="yzxCrmTest.crm.settings.domian.User">
+    <select id="Login" resultType="yzxCrmTest.crm.settings.domain.User">
         select * from tbl_user where loginAct=#{loginAct} and loginPwd=#{loginPwd}
     </select>
-    <select id="getUserList" resultType="yzxCrmTest.crm.settings.domian.User">
+    <select id="getUserList" resultType="yzxCrmTest.crm.settings.domain.User">
         select * from tbl_user
     </select>
 </mapper>

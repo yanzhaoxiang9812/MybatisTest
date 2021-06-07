@@ -1,4 +1,4 @@
-package yzxCrmTest.crm.settings.domian;
+package yzxCrmTest.crm.settings.domain;
 
 public class User {
 

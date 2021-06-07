@@ -1,7 +1,7 @@
 package yzxCrmTest.crm.settings.service;
 
 import yzxCrmTest.crm.exception.LoginExeption;
-import yzxCrmTest.crm.settings.domian.User;
+import yzxCrmTest.crm.settings.domain.User;
 
 import java.util.List;
 

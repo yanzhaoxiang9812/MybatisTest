@@ -1,6 +1,6 @@
 package yzxCrmTest.crm.settings.web.controller;
 
-import yzxCrmTest.crm.settings.domian.User;
+import yzxCrmTest.crm.settings.domain.User;
 import yzxCrmTest.crm.settings.service.Impl.UserServiceImpl;
 import yzxCrmTest.crm.settings.service.UserService;
 import yzxCrmTest.crm.utils.MD5Util;

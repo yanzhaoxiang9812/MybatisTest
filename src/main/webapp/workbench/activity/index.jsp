@@ -30,7 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//给添加按钮绑定事件
 		$("#openAddWindow").click(function () {
 			$.ajax({
-				url : "/workbench/activity/getUserList.do",
+				url : "workbench/activity/getUserList.do",
 				type : "get",
 				dataType : "json",
 				success : function(data){
@@ -47,32 +47,36 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		})
 
 		//给保存按钮绑定事件
+		//为保存按钮绑定事件，执行添加操作
 		$("#saveAddActivity").click(function () {
+
 			$.ajax({
-				url : "/workbench/activity/saveActivity.do",
-				data: {
+
+				url : "workbench/activity/saveActivity.do",
+				data : {
+
 					"owner" : $.trim($("#create-marketActivityOwner").val()),
 					"name" : $.trim($("#create-marketActivityName").val()),
 					"startDate" : $.trim($("#create-startTime").val()),
 					"endDate" : $.trim($("#create-endTime").val()),
 					"cost" : $.trim($("#create-cost").val()),
 					"description" : $.trim($("#create-describe").val())
+
 				},
 				type : "post",
 				dataType : "json",
-				success : function(data){
-					if (data.success){
-						//成功并刷新列表
+				success : function (data) {
+					if(data.success){
 						$("#createActivityModal").modal("hide");
-						//关闭模态窗口
-					}else {
-						//失败
-						alert("添加失败");
+					}else{
+						alert("添加市场活动失败");
 					}
-
 				}
+
 			})
+
 		})
+
 	});
 	
 </script>

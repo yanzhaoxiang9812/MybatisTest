@@ -1,6 +1,6 @@
 package yzxCrmTest.crm.settings.dao;
 
-import yzxCrmTest.crm.settings.domian.User;
+import yzxCrmTest.crm.settings.domain.User;
 
 import java.util.List;
 import java.util.Map;

@@ -2,7 +2,7 @@ package yzxCrmTest.crm.settings.service.Impl;
 
 import yzxCrmTest.crm.exception.LoginExeption;
 import yzxCrmTest.crm.settings.dao.UserDao;
-import yzxCrmTest.crm.settings.domian.User;
+import yzxCrmTest.crm.settings.domain.User;
 import yzxCrmTest.crm.settings.service.UserService;
 import yzxCrmTest.crm.utils.DateTimeUtil;
 import yzxCrmTest.crm.utils.SqlSessionUtil;

@@ -1,6 +1,6 @@
 package yzxCrmTest.crm.filter;
 
-import yzxCrmTest.crm.settings.domian.User;
+import yzxCrmTest.crm.settings.domain.User;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
