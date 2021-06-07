@@ -70,7 +70,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					if(data.success){
 						//清空模态窗口内容
 						$("#addActivityForm")[0].reset();
-						pageList(0,2);
+						pageList(1,2);
 						//关闭模态窗口
 						$("#createActivityModal").modal("hide");
 					}else{
@@ -96,7 +96,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			pageList(1,2);
 		})
 
+		//给复选框绑定事件（全选）
+		$("#activityListCheckboxAll").click(function () {
+			$("#input[name=xzk]").prop("checked",this.checked);
+		})
+
 	});
+
+
 	//展示列表信息
 	function pageList(pageNo,pageSize) {
 
@@ -123,7 +130,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				//每一个n就是一个activity对象
 				$.each(data.dataList,function (i,n) {
 					html += '<tr class="active">';
-					html += '<td><input type="checkbox" name="xz" value="'+n.id+'"/></td>';
+					html += '<td><input type="checkbox" name="xzk" value="'+n.id+'"/></td>';
 					html += '<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href=\'workbench/activity/detail.do?id='+n.id+'\';">'+n.name+'</a></td>';
 					html += '<td>'+n.owner+'</td>';
 					html += '<td>'+n.startDate+'</td>';
@@ -350,7 +357,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<table class="table table-hover">
 					<thead>
 						<tr style="color: #B3B3B3;">
-							<td><input type="checkbox" /></td>
+							<td><input type="checkbox" id="activityListCheckboxAll"/></td>
 							<td>名称</td>
                             <td>所有者</td>
 							<td>开始日期</td>
