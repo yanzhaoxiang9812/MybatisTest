@@ -27,7 +27,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			pickerPosition: "bottom-left"
 		});
 
-		//给添加按钮绑定事件
+		//给添加按钮绑定事件（显示用户姓名）
 		$("#openAddWindow").click(function () {
 			$.ajax({
 				url : "workbench/activity/getUserList.do",
@@ -46,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			})
 		})
 
-		//给保存按钮绑定事件
+
 		//为保存按钮绑定事件，执行添加操作
 		$("#saveAddActivity").click(function () {
 
@@ -67,6 +67,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				dataType : "json",
 				success : function (data) {
 					if(data.success){
+						//清空模态窗口内容
+						$("#addActivityForm")[0].reset();
+						//关闭模态窗口
 						$("#createActivityModal").modal("hide");
 					}else{
 						alert("添加市场活动失败");
@@ -76,8 +79,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			})
 
 		})
+		//页面加载完成执行方法展示活动列表(默认显示第一页，每页2条数据)
+		pageList(1,2);
 
 	});
+	//展示列表信息
+	function pageList(pageNo,pageSize) {
+
+	}
 	
 </script>
 </head>
@@ -95,7 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</div>
 				<div class="modal-body">
 				
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" id="addActivityForm">
 					
 						<div class="form-group">
 							<label for="create-marketActivityOwner" class="col-sm-2 control-label">所有者<span style="font-size: 15px; color: red;">*</span></label>
