@@ -91,19 +91,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.46">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/crm/src/main/webapp/login.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -226,7 +213,7 @@
       <workItem from="1623037968753" duration="761000" />
       <workItem from="1623038794145" duration="370000" />
       <workItem from="1623040990048" duration="3370000" />
-      <workItem from="1623044797409" duration="15270000" />
+      <workItem from="1623044797409" duration="15830000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1622797883125</created>
@@ -291,11 +278,29 @@
       <option name="project" value="LOCAL" />
       <updated>1623059705736</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="day3">
+      <created>1623060494508</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1623060494508</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="day1" />

@@ -97,10 +97,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		})
 
 		//给复选框绑定事件（全选）
-		$("#activityListCheckboxAll").click(function () {
-			$("#input[name=xzk]").prop("checked",this.checked);
-		})
+        $("#activityListCheckboxAll").click(function () {
 
+            $("input[name=xzk]").prop("checked",this.checked);
+
+        })
+		//反向全选
+        $("#activityList").on("click",$("input[name=xzk]"),function () {
+            $("#activityListCheckboxAll").prop("checked",$("input[name=xzk]").length==$("input[name=xzk]:checked").length);
+        })
 	});
 
 
