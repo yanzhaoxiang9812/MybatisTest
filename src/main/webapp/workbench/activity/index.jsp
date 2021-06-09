@@ -106,11 +106,54 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         $("#activityList").on("click",$("input[name=xzk]"),function () {
             $("#activityListCheckboxAll").prop("checked",$("input[name=xzk]").length==$("input[name=xzk]:checked").length);
         })
+		
+		//给删除按钮绑定事件
+		$("#deleteActivity").click(function () {
+			//找到复选框选中得目标
+			var $xzk = $("input[name=xzk]:checked");
+			if($xzk.length==0){
+				//没有选中任何一个复选框
+				alert("请选择需要删除的活动");
+			}else {
+				//取得所选的id
+				var param="";
+				for (var i=0;i<$xzk.length;i++){
+					param += "id="+$($xzk[i]).val();
+					//如果不是最后一个元素，需要追加&
+					if(i<$xzk.length-1){
+						param +="&";
+					}
+				}
+				//向后端传id执行删除操作
+				$.ajax({
+					url: "workbench/activity/delete.do",
+					data: param,
+					type: "post",
+					dataType: "json",
+					success: function (data) {
+						/*
+						data={"success":true}
+						 */
+						if(data.success){
+							//删除成功
+							//刷新列表
+							pageList(1,2);
+						}else {
+							alert("删除失败");
+						}
+					}
+				})
+
+			}
+		})
 	});
 
 
 	//展示列表信息
 	function pageList(pageNo,pageSize) {
+
+		//将全选的复选框清空
+		$("#activityListCheckboxAll").prop("checked",false);
 
 		//查询列表前，将隐藏域信息取出出，重新赋值与搜索框
 		$("#search-name").val($.trim($("#hidden-name").val()));
@@ -352,7 +395,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="btn-group" style="position: relative; top: 18%;">
 				  <button type="button" class="btn btn-primary" id="openAddWindow"><span class="glyphicon glyphicon-plus"></span> 创建</button>
 				  <button type="button" class="btn btn-default" id="openUpdateWindow"><span class="glyphicon glyphicon-pencil"></span> 修改</button>
-				  <button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-minus"></span> 删除</button>
+				  <button type="button" class="btn btn-danger" id="deleteActivity"><span class="glyphicon glyphicon-minus"></span> 删除</button>
 				</div>
 
 

@@ -4,11 +4,26 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="yzxCrmTest.crm.workbench.dao.ActivityDao">
+
+
+    <delete id="deleteById">
+        delete
+        from tbl_activity
+        where id in
+        <foreach collection="array" item="ids" open="(" close=")" separator=",">
+            #{ids}
+        </foreach>
+    </delete>
+
+
     <insert id="save">insert into tbl_activity(
                          id,owner,name,startDate,endDate,cost,description,createTime,createBy
                          )values(
                                 #{id},#{owner},#{name},#{startDate},#{endDate},#{cost},#{description},#{createTime},#{createBy}
-                                ) </insert>
+                                )
+    </insert>
+
+
     <select id="getActivityListByCondition" resultType="yzxCrmTest.crm.workbench.domain.Activity">
         select
         a.id,
@@ -36,6 +51,8 @@
         order by a.createTime desc
         limit #{skipCount},#{pageSize}
     </select>
+
+
 
     <select id="getTotalByCondition" resultType="int">
         select count(*)
@@ -70,6 +87,8 @@
 
         </where>
     </select>
+
+
 </mapper>
 
 
