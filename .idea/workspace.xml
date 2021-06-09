@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6c80a7c-392c-4e98-b878-6432ac1e8a7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityRemarkDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityRemarkDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.xml" afterDir="false" />
@@ -55,9 +53,6 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="1tTLM4CeTXLTx66mfJKA3snnSQk" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -84,6 +79,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.37214887" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -234,7 +230,7 @@
       <workItem from="1623040990048" duration="3370000" />
       <workItem from="1623044797409" duration="15830000" />
       <workItem from="1623164236096" duration="317000" />
-      <workItem from="1623215595724" duration="4475000" />
+      <workItem from="1623215595724" duration="10049000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1622797883125</created>
@@ -313,7 +309,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623164535335</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="day4">
+      <created>1623220478373</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1623220478373</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

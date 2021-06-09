@@ -1,19 +1,22 @@
 package yzxCrmTest.crm.workbench.service.Impl;
 
+import yzxCrmTest.crm.settings.dao.UserDao;
+import yzxCrmTest.crm.settings.domain.User;
 import yzxCrmTest.crm.utils.SqlSessionUtil;
 import yzxCrmTest.crm.vo.PaginationVO;
 import yzxCrmTest.crm.workbench.dao.ActivityDao;
 import yzxCrmTest.crm.workbench.dao.ActivityRemarkDao;
 import yzxCrmTest.crm.workbench.domain.Activity;
-import yzxCrmTest.crm.workbench.domain.ActivityRemark;
 import yzxCrmTest.crm.workbench.service.ActivityService;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ActivityServiceImpl implements ActivityService {
     private ActivityDao activityDao  = SqlSessionUtil.getSqlSession().getMapper(ActivityDao.class);
     private ActivityRemarkDao activityRemarkDao = SqlSessionUtil.getSqlSession().getMapper(ActivityRemarkDao.class);
+    private UserDao userDao = SqlSessionUtil.getSqlSession().getMapper(UserDao.class);
     public boolean save(Activity activity) {
         boolean flag = true;
         int count = activityDao.save(activity);
@@ -52,6 +55,33 @@ public class ActivityServiceImpl implements ActivityService {
         int count3 = activityDao.deleteById(ids);
         if (count3!= ids.length){
             flag=false;
+        }
+        return flag;
+    }
+
+    @Override
+    public Map<String, Object> getUserListAndActivity(String id) {
+        //取uList
+        List<User> uList = userDao.getUserList();
+
+        //取Activity
+        Activity a = activityDao.getActivityById(id);
+
+        Map<String,Object> map = new HashMap<String, Object>();
+        map.put("uList",uList);
+        map.put("a",a);
+
+        return map;
+    }
+
+    @Override
+    public boolean update(Activity a) {
+        boolean flag = true;
+        int count = activityDao.update(a);
+        if(count!=1){
+
+            flag = false;
+
         }
         return flag;
     }
