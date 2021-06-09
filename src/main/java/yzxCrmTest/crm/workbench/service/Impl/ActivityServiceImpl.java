@@ -85,4 +85,10 @@ public class ActivityServiceImpl implements ActivityService {
         }
         return flag;
     }
+
+    @Override
+    public Activity detail(String id) {
+        Activity a = activityDao.detail(id);
+        return a;
+    }
 }

@@ -43,9 +43,19 @@ public class ActivityController extends HttpServlet {
         }else if ("/workbench/activity/updateActivity.do".equals(path)){
                 //执行修改操作
                 update(request,response);
+        }else if("/workbench/activity/detail.do".equals(path)){
+                //获取该对象详细内容
+                detail(request,response);
         }
     }
 
+    private void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        ActivityService activityService = (ActivityService) ServiceFactory.getService(new ActivityServiceImpl());
+        Activity a = activityService.detail(id);
+        request.setAttribute("a",a);
+        request.getRequestDispatcher("/workbench/activity/detail.jsp").forward(request,response);
+    }
     private void update(HttpServletRequest request, HttpServletResponse response) {
         String id = request.getParameter("id");
         String owner = request.getParameter("owner");
@@ -58,10 +68,10 @@ public class ActivityController extends HttpServlet {
         String editBy = ((User)request.getSession().getAttribute("user")).getName();
         Activity a = new Activity();
         a.setId(id);
-        a.setCost(cost);
-        a.setStartDate(startDate);
         a.setOwner(owner);
         a.setName(name);
+        a.setCost(cost);
+        a.setStartDate(startDate);
         a.setEndDate(endDate);
         a.setDescription(description);
         a.setEditTime(editTime);
