@@ -76,13 +76,11 @@ public class ActivityController extends HttpServlet {
     }
 
     private void addRemark(HttpServletRequest request, HttpServletResponse response) {
-
                 String id = UUIDUtil.getUUID();
                 String nodeContent = request.getParameter("nodeContent");
                 String activityId =request.getParameter("activityId");
                 String createTime = DateTimeUtil.getSysTime();
                 String createBy = ((User)request.getSession().getAttribute("user")).getName();
-
                 ActivityRemark activityRemark = new ActivityRemark();
                 activityRemark.setActivityId(activityId);
                 activityRemark.setCreateTime(createTime);
