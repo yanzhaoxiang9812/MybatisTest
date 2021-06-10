@@ -14,10 +14,9 @@ public interface ActivityService {
     Map<String, Object> getUserListAndActivity(String id);
     boolean update(Activity a);
     Activity detail(String id);
-
     List<ActivityRemark> getRemarkListByActivityId(String id);
-
     boolean deleteRemarkById(String id);
-
     boolean addRemark(ActivityRemark activityRemark);
+
+    boolean updateRemark(ActivityRemark activityRemark);
 }

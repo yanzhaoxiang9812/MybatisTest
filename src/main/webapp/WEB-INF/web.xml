@@ -48,6 +48,7 @@
     <url-pattern>/workbench/activity/getRemarkListByActivityId.do</url-pattern>
     <url-pattern>/workbench/activity/deleteRemarkById.do</url-pattern>
     <url-pattern>/workbench/activity/addRemark.do</url-pattern>
+    <url-pattern>/workbench/activity/updateRemark.do</url-pattern>
   </servlet-mapping>
 </web-app>
 

@@ -66,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				url: "workbench/activity/addRemark.do",
 				data: {
 					"nodeContent" : $.trim($("#remark").val()),
-					"activityId" : ${a.id}
+					"activityId" : "${a.id}"
 				},
 				type: "post",
 				dataType: "json",
@@ -125,6 +125,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					alert("删除失败");
 				}
 			}
+		})
+	}
+	function editRemark(id){
+		$("#remarkId").val(id);
+		$("#editRemarkModal").modal("show");
+		$("#updateRemarkBtn").click(function () {
+			var rid =  $("#remarkId").val();
+			$.ajax({
+				url: "workbench/activity/updateRemark.do",
+				data: {
+					"id" : rid,
+					"nodeContent" :  $.trim($("#noteContent").val())
+				},
+				type: "post",
+				dataType: "json",
+				success: function (data) {
+					if(data.success){
+						window.location.reload();
+					}else {
+						alert("修改失败");
+					}
+				}
+			})
 		})
 	}
 </script>

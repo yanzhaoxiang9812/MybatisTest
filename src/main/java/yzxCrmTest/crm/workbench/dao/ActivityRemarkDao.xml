@@ -5,19 +5,36 @@
 
 <mapper namespace="yzxCrmTest.crm.workbench.dao.ActivityRemarkDao">
 
+    <update id="updateRemark">
+        update tbl_activity_remark
+
+        set
+            noteContent=#{noteContent},
+            editTime=#{editTime},
+            editBy=#{editBy},
+            editFlag=#{editFlag}
+
+        where id=#{id}
+    </update>
+
     <insert id="addRemark">
-            insert into tbl_activity_remark
-            (id,
+
+        insert into tbl_activity_remark(
+            id,
             noteContent,
             createTime,
             createBy,
-            editTime,
-            editBy,
             editFlag,
-            activityId)
-            values(
-                    #{id},#{noteContent},#{createTime},#{createBy},#{editTime},#{editBy},#{editFlag},#{activityId}
-                   )
+            activityId
+        )
+        values(
+                  #{id},
+                  #{noteContent},
+                  #{createTime},
+                  #{createBy},
+                  #{editFlag},
+                  #{activityId}
+              )
     </insert>
 
     <delete id="deleteRemarkById">

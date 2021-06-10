@@ -53,7 +53,26 @@ public class ActivityController extends HttpServlet {
                 deleteRemarkById(request,response);
         }else if("/workbench/activity/addRemark.do".equals(path)){
                 addRemark(request,response);
+        }else if ("/workbench/activity/updateRemark.do".equals(path)){
+                updateRemark(request,response);
         }
+    }
+
+    private void updateRemark(HttpServletRequest request, HttpServletResponse response) {
+                String id = request.getParameter("id");
+                String nodeContent = request.getParameter("nodeContent");
+                String editTime = DateTimeUtil.getSysTime();
+                String editBy = ((User)request.getSession().getAttribute("user")).getName();
+                String editFlag = "1";
+                ActivityRemark activityRemark = new ActivityRemark();
+                activityRemark.setId(id);
+                activityRemark.setNoteContent(nodeContent);
+                activityRemark.setEditTime(editTime);
+                activityRemark.setEditBy(editBy);
+                activityRemark.setEditFlag(editFlag);
+                ActivityService activityService = (ActivityService) ServiceFactory.getService(new ActivityServiceImpl());
+                boolean flag = activityService.updateRemark(activityRemark);
+                PrintJson.printJsonFlag(response,flag);
     }
 
     private void addRemark(HttpServletRequest request, HttpServletResponse response) {
@@ -63,6 +82,7 @@ public class ActivityController extends HttpServlet {
                 String activityId =request.getParameter("activityId");
                 String createTime = DateTimeUtil.getSysTime();
                 String createBy = ((User)request.getSession().getAttribute("user")).getName();
+
                 ActivityRemark activityRemark = new ActivityRemark();
                 activityRemark.setActivityId(activityId);
                 activityRemark.setCreateTime(createTime);
