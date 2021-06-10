@@ -7,6 +7,7 @@ import yzxCrmTest.crm.vo.PaginationVO;
 import yzxCrmTest.crm.workbench.dao.ActivityDao;
 import yzxCrmTest.crm.workbench.dao.ActivityRemarkDao;
 import yzxCrmTest.crm.workbench.domain.Activity;
+import yzxCrmTest.crm.workbench.domain.ActivityRemark;
 import yzxCrmTest.crm.workbench.service.ActivityService;
 
 import java.util.HashMap;
@@ -90,5 +91,33 @@ public class ActivityServiceImpl implements ActivityService {
     public Activity detail(String id) {
         Activity a = activityDao.detail(id);
         return a;
+    }
+
+    @Override
+    public List<ActivityRemark> getRemarkListByActivityId(String id) {
+        List<ActivityRemark> activityRemarkList = activityRemarkDao.getRemarkListByActivityId(id);
+        return activityRemarkList;
+    }
+
+    @Override
+    public boolean deleteRemarkById(String id) {
+        boolean flag = true;
+        int count = activityRemarkDao.deleteRemarkById(id);
+        if(count!=1){
+            flag = false;
+        }
+        return flag;
+    }
+
+    @Override
+    public boolean addRemark(ActivityRemark activityRemark) {
+        boolean flag = true;
+        int count = activityRemarkDao.addRemark(activityRemark);
+        if(count!=1){
+
+            flag = false;
+
+        }
+        return flag;
     }
 }

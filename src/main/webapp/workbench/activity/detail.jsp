@@ -50,14 +50,88 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$(".myHref").mouseout(function(){
 			$(this).children("span").css("color","#E6E6E6");
 		});
+		
+		//页面加载完毕 显示备注信息列表
+		showRemarkList();
+		$("#remarkBody").on("mouseover",".remarkDiv",function(){
+			$(this).children("div").children("div").show();
+		})
+		$("#remarkBody").on("mouseout",".remarkDiv",function(){
+			$(this).children("div").children("div").hide();
+		})
+
+		//给把保存按钮绑定事件，执行添加备注操作
+		$("#saveRemarkBtn").click(function () {
+			$.ajax({
+				url: "workbench/activity/addRemark.do",
+				data: {
+					"nodeContent" : $.trim($("#remark").val()),
+					"activityId" : ${a.id}
+				},
+				type: "post",
+				dataType: "json",
+				success: function (data) {
+					if(data.success){
+						window.location.reload();
+					}else {
+						alert("删除失败");
+					}
+				}
+			})
+		})
+
 	});
-	
+	function showRemarkList() {
+		$.ajax({
+			url : "workbench/activity/getRemarkListByActivityId.do",
+			data : {
+				"activityId" : "${a.id}"
+			},
+			type : "get",
+			dataType : "json",
+			success : function (data) {
+				var html = "";
+				$.each(data,function (i,n) {
+					html += '<div class="remarkDiv" style="height: 60px;">';
+					html += '<img title="zhangsan" src="image/user-thumbnail.png" style="width: 30px; height:30px;">';
+					html += '<div style="position: relative; top: -40px; left: 40px;" >';
+					html += '<h5 id="e'+n.id+'">'+n.noteContent+'</h5>';
+					html += '<font color="gray">市场活动</font> <font color="gray">-</font> <b>${a.name}</b> <small style="color: gray;" id="s'+n.id+'"> '+(n.editFlag==0?n.createTime:n.editTime)+' 由'+(n.editFlag==0?n.createBy:n.editBy)+'</small>';
+					html += '<div style="position: relative; left: 500px; top: -30px; height: 30px; width: 100px; display: none;">';
+					html += '<a class="myHref" href="javascript:void(0);" onclick="editRemark(\''+n.id+'\')"><span class="glyphicon glyphicon-edit" style="font-size: 20px; color: #FF0000;"></span></a>';
+					html += '&nbsp;&nbsp;&nbsp;&nbsp;';
+					html += '<a class="myHref" href="javascript:void(0);" onclick="deleteRemark(\''+n.id+'\')"><span class="glyphicon glyphicon-remove" style="font-size: 20px; color: #FF0000;"></span></a>';
+					html += '</div>';
+					html += '</div>';
+					html += '</div>';
+				})
+				$("#remarkDiv").before(html);
+			}
+		})
+	}
+	function deleteRemark(id) {
+		$.ajax({
+			url: "workbench/activity/deleteRemarkById.do",
+			data: {
+					"id" : id
+			},
+			type: "post",
+			dataType: "json",
+			success: function (data) {
+				if(data.success){
+					//删除成功，刷新列表
+					window.location.reload();
+				}else {
+					alert("删除失败");
+				}
+			}
+		})
+	}
 </script>
 <script type="text/javascript">
 
 </script>
 </head>
-<body>
 <body>
 
 <!-- 修改市场活动备注的模态窗口 -->
@@ -149,37 +223,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 
 <!-- 备注 -->
-<div style="position: relative; top: 30px; left: 40px;">
+<div id="remarkBody" style="position: relative; top: 30px; left: 40px;">
 	<div class="page-header">
 		<h4>备注</h4>
-	</div>
-
-	<!-- 备注1 -->
-	<div class="remarkDiv" style="height: 60px;">
-		<img title="zhangsan" src="../../image/user-thumbnail.png" style="width: 30px; height:30px;">
-		<div style="position: relative; top: -40px; left: 40px;" >
-			<h5>哎呦！</h5>
-			<font color="gray">市场活动</font> <font color="gray">-</font> <b>发传单</b> <small style="color: gray;"> 2017-01-22 10:10:10 由zhangsan</small>
-			<div style="position: relative; left: 500px; top: -30px; height: 30px; width: 100px; display: none;">
-				<a class="myHref" href="javascript:void(0);"><span class="glyphicon glyphicon-edit" style="font-size: 20px; color: #E6E6E6;"></span></a>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<a class="myHref" href="javascript:void(0);"><span class="glyphicon glyphicon-remove" style="font-size: 20px; color: #E6E6E6;"></span></a>
-			</div>
-		</div>
-	</div>
-
-	<!-- 备注2 -->
-	<div class="remarkDiv" style="height: 60px;">
-		<img title="zhangsan" src="../../image/user-thumbnail.png" style="width: 30px; height:30px;">
-		<div style="position: relative; top: -40px; left: 40px;" >
-			<h5>呵呵！</h5>
-			<font color="gray">市场活动</font> <font color="gray">-</font> <b>发传单</b> <small style="color: gray;"> 2017-01-22 10:20:10 由zhangsan</small>
-			<div style="position: relative; left: 500px; top: -30px; height: 30px; width: 100px; display: none;">
-				<a class="myHref" href="javascript:void(0);"><span class="glyphicon glyphicon-edit" style="font-size: 20px; color: #E6E6E6;"></span></a>
-				&nbsp;&nbsp;&nbsp;&nbsp;
-				<a class="myHref" href="javascript:void(0);"><span class="glyphicon glyphicon-remove" style="font-size: 20px; color: #E6E6E6;"></span></a>
-			</div>
-		</div>
 	</div>
 
 	<div id="remarkDiv" style="background-color: #E6E6E6; width: 870px; height: 90px;">
@@ -187,7 +233,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<textarea id="remark" class="form-control" style="width: 850px; resize : none;" rows="2"  placeholder="添加备注..."></textarea>
 			<p id="cancelAndSaveBtn" style="position: relative;left: 737px; top: 10px; display: none;">
 				<button id="cancelBtn" type="button" class="btn btn-default">取消</button>
-				<button type="button" class="btn btn-primary">保存</button>
+				<button type="button" class="btn btn-primary" id="saveRemarkBtn">保存</button>
 			</p>
 		</form>
 	</div>

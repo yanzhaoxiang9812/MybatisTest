@@ -2,7 +2,9 @@ package yzxCrmTest.crm.workbench.service;
 
 import yzxCrmTest.crm.vo.PaginationVO;
 import yzxCrmTest.crm.workbench.domain.Activity;
+import yzxCrmTest.crm.workbench.domain.ActivityRemark;
 
+import java.util.List;
 import java.util.Map;
 
 public interface ActivityService {
@@ -12,4 +14,10 @@ public interface ActivityService {
     Map<String, Object> getUserListAndActivity(String id);
     boolean update(Activity a);
     Activity detail(String id);
+
+    List<ActivityRemark> getRemarkListByActivityId(String id);
+
+    boolean deleteRemarkById(String id);
+
+    boolean addRemark(ActivityRemark activityRemark);
 }
