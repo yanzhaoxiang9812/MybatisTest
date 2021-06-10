@@ -10,22 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6c80a7c-392c-4e98-b878-6432ac1e8a7d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicTypeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicTypeDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicValueDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicValueDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/domain/DicType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/domain/DicValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/ClueService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/Impl/ClueServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ClueController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ActivityController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/activity/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/activity/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/clue/convert.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/clue/convert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/clue/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/clue/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/clue/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/clue/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/contacts/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/contacts/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/contacts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/contacts/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/customer/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/customer/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/customer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/customer/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/detail.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/edit.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/save.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/transaction/save.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +71,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -87,15 +82,16 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.37214887" />
+    <property name="service.view.auto.scroll.to.source" value="true" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\settings\dao" />
       <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\workbench\dao" />
+      <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\workbench\domain" />
       <recent name="E:\CRM\crm\src\main\webapp\jquery" />
       <recent name="E:\CRM\crm\target\classes\yzxCrmTest\crm" />
-      <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\utils" />
-      <recent name="E:\CRM\crm\src\main\webapp\WEB-INF\lib" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\CRM\crm\src\main\java\yzxCrmTest\crm\settings\dao" />
@@ -240,7 +236,7 @@
       <workItem from="1623164236096" duration="317000" />
       <workItem from="1623215595724" duration="13245000" />
       <workItem from="1623243780499" duration="5826000" />
-      <workItem from="1623305538290" duration="10018000" />
+      <workItem from="1623305538290" duration="11007000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1622797883125</created>
@@ -354,7 +350,21 @@
       <option name="project" value="LOCAL" />
       <updated>1623314075835</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="day5">
+      <created>1623315895350</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1623315895350</updated>
+    </task>
+    <task id="LOCAL-00018" summary="day5">
+      <created>1623315941891</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1623315941891</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
