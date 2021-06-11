@@ -1,4 +1,4 @@
-package yzxCrmTest.crm.filter;
+package yzxCrmTest.crm.web.filter;
 
 import javax.servlet.*;
 import javax.servlet.annotation.*;
