@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript">
 
 	$(function(){
-		pageList(1,2);
+		pageList(1,4);
 		//日历控件
 		$(".time").datetimepicker({
 			minView: "month",
@@ -98,7 +98,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#hidden-mphone").val($.trim($("#search-mphone").val()));
 					$("#hidden-state").val($.trim($("#search-state").val()));
 
-			pageList(1,2);
+			pageList(1,4);
 		})
 		//全选
 		$("#cAll").click(function () {
@@ -560,8 +560,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  </select>
 				    </div>
 				  </div>
-
-				  <button type="submit" class="btn btn-default" id="search-button">查询</button>
+				  <button type="button" class="btn btn-default" id="search-button" >查询</button>
 				  
 				</form>
 			</div>
@@ -593,7 +592,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</tbody>
 				</table>
 			</div>
-
+			<br><br>
 			<div style="height: 50px; position: relative;top: 30px;">
 
 				<div id="cluePage">
