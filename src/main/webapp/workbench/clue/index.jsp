@@ -78,8 +78,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				success : function (data) {
 					if(data.success){
 						$("#createClueModal").modal("hide");
-						window.location.reload();
-
+						pageList(1,2);
+						$("#saveForm")[0].reset();
 					}else {
 						alert("添加失败");
 					}
@@ -89,6 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		//查询按钮
 		$("#search-button").click(function () {
 			//点击查询按钮前将搜索框得内容保存到隐藏域中
+
 					$("#hidden-fullname").val($.trim($("#search-fullname").val()));
 					$("#hidden-company").val($.trim($("#search-company").val()));
 					$("#hidden-phone").val($.trim($("#search-phone").val()));
@@ -96,6 +97,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					$("#hidden-owner").val($.trim($("#search-owner").val()));
 					$("#hidden-mphone").val($.trim($("#search-mphone").val()));
 					$("#hidden-state").val($.trim($("#search-state").val()));
+
 			pageList(1,2);
 		})
 		//全选
@@ -119,6 +121,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$("#search-owner").val($.trim($("#hidden-owner").val()));
 		$("#search-mphone").val($.trim($("#hidden-mphone").val()));
 		$("#search-state").val($.trim($("#hidden-state").val()));
+
 
 		$.ajax({
 			url: "workbench/clue/pageList.do",
@@ -194,7 +197,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<h4 class="modal-title" id="myModalLabel">创建线索</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" role="form">
+					<form class="form-horizontal" role="form" id="saveForm">
 					
 						<div class="form-group">
 							<label for="create-owner" class="col-sm-2 control-label">所有者<span style="font-size: 15px; color: red;">*</span></label>

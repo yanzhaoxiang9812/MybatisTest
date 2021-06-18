@@ -72,8 +72,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				dataType : "json",
 				success : function (data) {
 					if(data.success){
-						//回到首页
-						pageList(1,4);
 						//清空模态窗口内容
 						$("#addActivityForm")[0].reset();
 						pageList(1,2);
