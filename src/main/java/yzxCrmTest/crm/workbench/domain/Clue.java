@@ -22,7 +22,33 @@ public class Clue {
 	private String contactSummary;	//联系纪要
 	private String nextContactTime;	//下次联系时间
 	private String address;	//地址
-	
+
+	public Clue(String id, String fullname, String appellation, String owner, String company, String job, String email, String phone, String website, String mphone, String state, String source, String createBy, String createTime, String editBy, String editTime, String description, String contactSummary, String nextContactTime, String address) {
+		this.id = id;
+		this.fullname = fullname;
+		this.appellation = appellation;
+		this.owner = owner;
+		this.company = company;
+		this.job = job;
+		this.email = email;
+		this.phone = phone;
+		this.website = website;
+		this.mphone = mphone;
+		this.state = state;
+		this.source = source;
+		this.createBy = createBy;
+		this.createTime = createTime;
+		this.editBy = editBy;
+		this.editTime = editTime;
+		this.description = description;
+		this.contactSummary = contactSummary;
+		this.nextContactTime = nextContactTime;
+		this.address = address;
+	}
+
+	public Clue() {
+	}
+
 	public String getId() {
 		return id;
 	}
