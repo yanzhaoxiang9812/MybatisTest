@@ -38,4 +38,10 @@ public class ClueServiceImpl implements ClueService {
         //将vo返回
         return vo;
     }
+
+    @Override
+    public Clue detail(String id) {
+        Clue c = clueDao.detail(id);
+        return c;
+    }
 }

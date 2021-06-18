@@ -36,7 +36,17 @@ public class ClueController extends HttpServlet {
             save(request,response);
         }else if ("/workbench/clue/pageList.do".equals(path)){
             pageList(request,response);
+        }else if ("/workbench/clue/detail.do".equals(path)){
+            detail(request,response);
         }
+    }
+
+    private void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String id = request.getParameter("id");
+        ClueService cs = (ClueService) ServiceFactory.getService(new ClueServiceImpl());
+        Clue c = cs.detail(id);
+        request.setAttribute("c",c);
+        request.getRequestDispatcher("/workbench//clue/detail.jsp").forward(request,response);
     }
 
     private void pageList(HttpServletRequest request, HttpServletResponse response) {
@@ -66,7 +76,6 @@ public class ClueController extends HttpServlet {
         PaginationVO<Clue> vo = cs.pageList(map);
         PrintJson.printJsonObj(response, vo);
 
-        int i = 0;
     }
 
     private void save(HttpServletRequest request, HttpServletResponse response) {
