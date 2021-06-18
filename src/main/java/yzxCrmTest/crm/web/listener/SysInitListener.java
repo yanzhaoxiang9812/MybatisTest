@@ -13,9 +13,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class SysInitListener implements ServletContextListener {
-    private DicService dicService = (DicService) ServiceFactory.getService(new DicServiceImpl());
+
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+        System.out.println("start.............");
+        DicService dicService = (DicService) ServiceFactory.getService(new DicServiceImpl());
         //System.out.println("全局域对象已创建");
         ServletContext application = sce.getServletContext();
         //取出数据字典 数据保存到全局作用域对象
@@ -24,5 +26,6 @@ public class SysInitListener implements ServletContextListener {
         for (String key:set){
             application.setAttribute(key,map.get(key));
         }
+        System.out.println("end..................");
     }
 }

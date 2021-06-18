@@ -15,7 +15,7 @@ public class TransactionInvocationHandler implements InvocationHandler{
 		this.target = target;
 		
 	}
-	@Override
+	//@Override
 	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 		
 		SqlSession session = null;
