@@ -137,14 +137,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 							<label for="edit-customerName" class="col-sm-2 control-label">名称<span style="font-size: 15px; color: red;">*</span></label>
 							<div class="col-sm-10" style="width: 300px;">
-								<input type="text" class="form-control" id="edit-customerName" value="动力节点">
+								<input type="text" class="form-control" id="edit-customerName" value="闫兆祥">
 							</div>
 						</div>
 						
 						<div class="form-group">
                             <label for="edit-website" class="col-sm-2 control-label">公司网站</label>
                             <div class="col-sm-10" style="width: 300px;">
-                                <input type="text" class="form-control" id="edit-website" value="http://www.bjpowernode.com">
+                                <input type="text" class="form-control" id="edit-website" value="666">
                             </div>
 							<label for="edit-phone" class="col-sm-2 control-label">公司座机</label>
 							<div class="col-sm-10" style="width: 300px;">
@@ -269,17 +269,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<tbody>
 						<tr>
 							<td><input type="checkbox" /></td>
-							<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='detail.html';">动力节点</a></td>
+							<td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='detail.html';">闫兆祥</a></td>
 							<td>zhangsan</td>
 							<td>010-84846003</td>
-							<td>http://www.bjpowernode.com</td>
+							<td>666</td>
 						</tr>
                         <tr class="active">
                             <td><input type="checkbox" /></td>
-                            <td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='detail.html';">动力节点</a></td>
+                            <td><a style="text-decoration: none; cursor: pointer;" onclick="window.location.href='detail.html';">闫兆祥</a></td>
                             <td>zhangsan</td>
                             <td>010-84846003</td>
-                            <td>http://www.bjpowernode.com</td>
+                            <td>666</td>
                         </tr>
 					</tbody>
 				</table>
