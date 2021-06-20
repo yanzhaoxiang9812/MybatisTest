@@ -2,6 +2,11 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+	String id = request.getParameter("id");
+	String fullname = request.getParameter("fullname");
+	String appellation = request.getParameter("appellation");
+	String company = request.getParameter("company");
+	String owner = request.getParameter("owner");
 %>
 <!DOCTYPE html>
 <html>
@@ -31,7 +36,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 </head>
 <body>
-	
+	<input type="hidden" value="<%=id%>">
 	<!-- 搜索市场活动的模态窗口 -->
 	<div class="modal fade" id="searchActivityModal" role="dialog" >
 		<div class="modal-dialog" role="document" style="width: 90%;">
@@ -85,13 +90,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</div>
 
 	<div id="title" class="page-header" style="position: relative; left: 20px;">
-		<h4>转换线索 <small>李四先生-</small></h4>
+		<h4>转换线索 <small><%=fullname%><%=appellation%>-<%=company%></small></h4>
 	</div>
 	<div id="create-customer" style="position: relative; left: 40px; height: 35px;">
-		新建客户：
+		新建客户：<%=company%>
 	</div>
 	<div id="create-contact" style="position: relative; left: 40px; height: 35px;">
-		新建联系人：李四先生
+		新建联系人：<%=fullname%>
 	</div>
 	<div id="create-transaction1" style="position: relative; left: 40px; height: 35px; top: 25px;">
 		<input type="checkbox" id="isCreateTransaction"/>
@@ -137,7 +142,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 	<div id="owner" style="position: relative; left: 40px; height: 35px; top: 50px;">
 		记录的所有者：<br>
-		<b>zhangsan</b>
+		<b><%=owner%></b>
 	</div>
 	<div id="operation" style="position: relative; left: 40px; height: 35px; top: 100px;">
 		<input class="btn btn-primary" type="button" value="转换">
