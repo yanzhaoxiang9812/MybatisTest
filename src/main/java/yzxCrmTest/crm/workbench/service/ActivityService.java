@@ -19,4 +19,8 @@ public interface ActivityService {
     boolean addRemark(ActivityRemark activityRemark);
 
     boolean updateRemark(ActivityRemark activityRemark);
+
+    List<Activity> getActivityListByClueId(String cid);
+
+    List<Activity> getActivityListByNameAndNotRelation(Map<String, String> map);
 }

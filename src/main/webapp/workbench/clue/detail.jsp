@@ -50,8 +50,134 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		$(".myHref").mouseout(function(){
 			$(this).children("span").css("color","#E6E6E6");
 		});
+		showActivityList();
+		//全选[关联市场活动的模态窗口]
+		$("#cAll").click(function () {
+
+			$("input[name=xzk]").prop("checked",this.checked);
+
+		})
+		//反向全选{关联市场活动的模态窗口}
+		$("#al2").on("click",$("input[name=xzk]"),function () {
+			$("#cAll").prop("checked",$("input[name=xzk]").length==$("input[name=xzk]:checked").length);
+		})
+
+		//搜索[关联市场活动的模态窗口]
+		$("#seach").keydown(function (event) {
+			if(event.keyCode==13){
+				$.ajax({
+
+					url : "workbench/clue/getActivityListByNameAndNotRelation.do",
+					data : {
+						"aname" : $.trim($("#seach").val()),
+						"cid" : "${c.id}"
+					},
+					type : "get",
+					dataType : "json",
+					success : function (data) {
+						var html = "";
+						$.each(data,function (i,n) {
+								html += '<tr>';
+								html += '<td><input type="checkbox" name="xzk" value="'+n.id+'"/></td>';
+								html += '<td>'+n.name+'</td>';
+								html += '<td>'+n.startDate+'</td>';
+								html += '<td>'+n.endDate+'</td>';
+								html += '<td>'+n.owner+'</td>';
+								html += '</tr>';
+
+						})
+
+						$("#al2").html(html);
+
+					}
+				})
+				return false;
+			}
+		})
+
+		//关联
+		$("#bundBtn").click(function () {
+			var $xzk = $("input[name=xzk]:checked");
+			if($xzk.length==0){
+				alert("选择一条活动");
+			}else {
+				var param = "cid=${c.id}&";
+				for (var i=0;i<$xzk.length;i++){
+					param += "aid="+$($xzk[i]).val();
+					//如果不是最后一个元素，需要追加&
+					if(i<$xzk.length-1){
+						param +="&";
+					}
+				}
+			}
+			$.ajax({
+				url : "workbench/clue/bund.do",
+				data : param,
+				type : "post",
+				dataType : "json",
+				success : function (data) {
+					if(data.success){
+						window.location.reload();
+
+					}else {
+						alert("关联失败");
+					}
+				}
+			})
+		})
 	});
-	
+	function showActivityList() {
+		$.ajax({
+
+			url : "workbench/clue/getActivityListByClueId.do",
+			data : {
+
+				"clueId" : "${c.id}"
+
+			},
+			type : "get",
+			dataType : "json",
+			success : function (data) {
+				var html = "";
+
+				$.each(data,function (i,n) {
+
+					html += '<tr>';
+					html += '<td>'+n.name+'</td>';
+					html += '<td>'+n.startDate+'</td>';
+					html += '<td>'+n.endDate+'</td>';
+					html += '<td>'+n.owner+'</td>';
+					html += '<td><a href="javascript:void(0);" onclick="unbund(\''+n.id+'\')" style="text-decoration: none;"><span class="glyphicon glyphicon-remove"></span>解除关联</a></td>';
+					html += '</tr>';
+
+				})
+
+				$("#activityBody").html(html);
+
+			}
+
+		})
+
+	}
+	function unbund(id) {
+		$.ajax({
+
+			url : "workbench/clue/unbund.do",
+			data : {
+				"id" : id
+			},
+			type : "post",
+			dataType : "json",
+			success : function (data) {
+				if(data.success){
+					showActivityList();
+				}else {
+					alert("解除失败");
+				}
+			}
+		})
+	}
+
 </script>
 
 </head>
@@ -71,7 +197,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="btn-group" style="position: relative; top: 18%; left: 8px;">
 						<form class="form-inline" role="form">
 						  <div class="form-group has-feedback">
-						    <input type="text" class="form-control" style="width: 300px;" placeholder="请输入市场活动名称，支持模糊查询">
+						    <input type="text" class="form-control" id="seach" style="width: 300px;" placeholder="请输入市场活动名称，支持模糊查询">
 						    <span class="glyphicon glyphicon-search form-control-feedback"></span>
 						  </div>
 						</form>
@@ -79,7 +205,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<table id="activityTable" class="table table-hover" style="width: 900px; position: relative;top: 10px;">
 						<thead>
 							<tr style="color: #B3B3B3;">
-								<td><input type="checkbox"/></td>
+								<td><input type="checkbox" id="cAll"/></td>
 								<td>名称</td>
 								<td>开始日期</td>
 								<td>结束日期</td>
@@ -87,27 +213,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<td></td>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<td><input type="checkbox"/></td>
-								<td>发传单</td>
-								<td>2020-10-10</td>
-								<td>2020-10-20</td>
-								<td>zhangsan</td>
-							</tr>
-							<tr>
-								<td><input type="checkbox"/></td>
-								<td>发传单</td>
-								<td>2020-10-10</td>
-								<td>2020-10-20</td>
-								<td>zhangsan</td>
-							</tr>
+						<tbody id="al2">
+
+
 						</tbody>
 					</table>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-					<button type="button" class="btn btn-primary" data-dismiss="modal">关联</button>
+					<button type="button" class="btn btn-primary"id="bundBtn">关联</button>
 				</div>
 			</div>
 		</div>
@@ -388,21 +502,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<td></td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>发传单</td>
-							<td>2020-10-10</td>
-							<td>2020-10-20</td>
-							<td>zhangsan</td>
-							<td><a href="javascript:void(0);"  style="text-decoration: none;"><span class="glyphicon glyphicon-remove"></span>解除关联</a></td>
-						</tr>
-						<tr>
-							<td>发传单</td>
-							<td>2020-10-10</td>
-							<td>2020-10-20</td>
-							<td>zhangsan</td>
-							<td><a href="javascript:void(0);"  style="text-decoration: none;"><span class="glyphicon glyphicon-remove"></span>解除关联</a></td>
-						</tr>
+					<tbody id="activityBody">
+
 					</tbody>
 				</table>
 			</div>

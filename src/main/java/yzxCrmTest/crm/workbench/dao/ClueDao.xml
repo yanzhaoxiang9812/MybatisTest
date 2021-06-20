@@ -5,6 +5,7 @@
 
 <mapper namespace="yzxCrmTest.crm.workbench.dao.ClueDao">
 
+
     <select id="detail" resultType="yzxCrmTest.crm.workbench.domain.Clue">
         select
                 c.id,

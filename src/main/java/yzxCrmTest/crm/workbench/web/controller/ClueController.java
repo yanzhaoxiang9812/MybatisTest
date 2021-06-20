@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +39,49 @@ public class ClueController extends HttpServlet {
             pageList(request,response);
         }else if ("/workbench/clue/detail.do".equals(path)){
             detail(request,response);
+        }else if ("/workbench/clue/getActivityListByClueId.do".equals(path)){
+            getActivityListByClueId(request,response);
+        }else if ("/workbench/clue/unbund.do".equals(path)){
+            unbund(request,response);
+        }else if ("/workbench/clue/getActivityListByNameAndNotRelation.do".equals(path)){
+            getActivityListByNameAndNotRelation(request,response);
+        }else if ("/workbench/clue/bund.do".equals(path)){
+            bund(request,response);
         }
+    }
+
+    private void bund(HttpServletRequest request, HttpServletResponse response) {
+            String cid = request.getParameter("cid");
+            String aids[] = request.getParameterValues("aid");
+            ClueService cs = (ClueService) ServiceFactory.getService(new ClueServiceImpl());
+            boolean flag = cs.bund(cid,aids);
+            PrintJson.printJsonFlag(response,flag);
+
+    }
+
+    private void getActivityListByNameAndNotRelation(HttpServletRequest request, HttpServletResponse response) {
+        String cid = request.getParameter("cid");
+        String aname = request.getParameter("aname");
+        Map<String,String> map = new HashMap<String, String>();
+        map.put("cid",cid);
+        map.put("aname",aname);
+        ActivityService as = (ActivityService) ServiceFactory.getService(new ActivityServiceImpl());
+        List<Activity> aList = as.getActivityListByNameAndNotRelation(map);
+        PrintJson.printJsonObj(response,aList);
+    }
+
+    private void unbund(HttpServletRequest request, HttpServletResponse response) {
+        String id = request.getParameter("id");
+        ClueService cs = (ClueService) ServiceFactory.getService(new ClueServiceImpl());
+        boolean flag = cs.unbund(id);
+        PrintJson.printJsonFlag(response,flag);
+    }
+
+    private void getActivityListByClueId(HttpServletRequest request, HttpServletResponse response) {
+        String id = request.getParameter("clueId");
+        ActivityService as = (ActivityService) ServiceFactory.getService(new ActivityServiceImpl());
+        List<Activity> aList = as.getActivityListByClueId(id);
+        PrintJson.printJsonObj(response,aList);
     }
 
     private void detail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

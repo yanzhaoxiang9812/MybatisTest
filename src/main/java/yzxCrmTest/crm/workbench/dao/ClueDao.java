@@ -17,4 +17,5 @@ public interface ClueDao {
     List<Clue> getClueListByCondition(Map<String, Object> map);
 
     Clue detail(String id);
+
 }
