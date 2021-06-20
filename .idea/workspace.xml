@@ -11,8 +11,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a6c80a7c-392c-4e98-b878-6432ac1e8a7d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicValueDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicValueDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/ActivityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/Impl/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/Impl/ActivityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ClueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ClueController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/clue/convert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/clue/convert.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/clue/detail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/clue/detail.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +78,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.37214887" />
     <property name="service.view.auto.scroll.to.source" value="true" />
@@ -96,17 +103,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.46">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="login.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/crm/src/main/webapp/login.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -239,7 +235,8 @@
       <workItem from="1623833973052" duration="77000" />
       <workItem from="1623985883623" duration="8348000" />
       <workItem from="1623995789476" duration="8260000" />
-      <workItem from="1624163930564" duration="9808000" />
+      <workItem from="1624163930564" duration="9885000" />
+      <workItem from="1624179861243" duration="7454000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1622797883125</created>
@@ -444,7 +441,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624172817381</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="day7">
+      <created>1624173841401</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1624173841401</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

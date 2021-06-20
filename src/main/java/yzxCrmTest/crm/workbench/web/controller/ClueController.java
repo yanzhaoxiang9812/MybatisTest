@@ -47,7 +47,26 @@ public class ClueController extends HttpServlet {
             getActivityListByNameAndNotRelation(request,response);
         }else if ("/workbench/clue/bund.do".equals(path)){
             bund(request,response);
+        }else if ("/workbench/clue/getActivityListByName.do".equals(path)){
+            getActivityListByName(request,response);
+        }else if ("/workbench/clue/convert.do".equals(path)){
+            convert(request,response);
         }
+    }
+
+    private void convert(HttpServletRequest request, HttpServletResponse response) {
+        String clueId = request.getParameter("clueId");
+        String flag = request.getParameter("flag");
+        if(flag!=null){
+            //需要创建交易
+        }
+    }
+
+    private void getActivityListByName(HttpServletRequest request, HttpServletResponse response) {
+        String aname = request.getParameter("aname");
+        ActivityService as = (ActivityService) ServiceFactory.getService(new ActivityServiceImpl());
+        List<Activity> aList = as.getActivityListByName(aname);
+        PrintJson.printJsonObj(response,aList);
     }
 
     private void bund(HttpServletRequest request, HttpServletResponse response) {
