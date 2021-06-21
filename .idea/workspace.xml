@@ -10,16 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6c80a7c-392c-4e98-b878-6432ac1e8a7d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/crm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicValueDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/settings/dao/DicValueDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/dao/ActivityDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/ActivityService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/Impl/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/service/Impl/ActivityServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ClueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yzxCrmTest/crm/workbench/web/controller/ClueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/workbench/clue/convert.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/workbench/clue/convert.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +230,8 @@
       <workItem from="1623985883623" duration="8348000" />
       <workItem from="1623995789476" duration="8260000" />
       <workItem from="1624163930564" duration="9885000" />
-      <workItem from="1624179861243" duration="7454000" />
+      <workItem from="1624179861243" duration="7588000" />
+      <workItem from="1624253631335" duration="142000" />
     </task>
     <task id="LOCAL-00001" summary="day1">
       <created>1622797883125</created>
@@ -448,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624173841401</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="day7">
+      <created>1624187391729</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1624187391729</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
